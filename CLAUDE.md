@@ -64,7 +64,14 @@ Active development happens on feature branches; `main` is the deploy trigger. Do
 
 Current working branch: `claude/add-claude-documentation-68Wrh`.
 
-## Related repos
+## Related Repos
 
-- `milk790-code/popmonster-vip` — the lowercase-named site (separate codebase, full static site)
-- `milk790-code/Repository-name-popmonster-website-` — placeholder/metadata stub for the same project
+Part of the PopMonster ecosystem under `milk790-code`:
+
+| Repo | Role |
+|---|---|
+| **`popmonster-website-deployment`** (this repo) | Deployment artifact (zip → GitHub Pages → popmonster.vip) |
+| `popmonster-vip` | Static site source + `social_distributor` Flask backend |
+| `customer-project-portal` | Full-stack SaaS portal with AI search; also serves PopMonster site at `/` |
+| `popmonster-linebot` | LINE customer-service bot (Flask + OpenAI) |
+| `Repository-name-popmonster-website-` | Placeholder / stub repo |
