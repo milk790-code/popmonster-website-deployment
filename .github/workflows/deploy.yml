@@ -12,9 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Extract bundle
+        run: |
+          if [ -f popmonster-pages.zip ]; then
+            mkdir -p site
+            unzip -o popmonster-pages.zip -d site
+            echo "✓ Bundle extracted to site/"
+            ls -la site/ | head -20
+          else
+            echo "⚠ popmonster-pages.zip not found, using root directory"
+          fi
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          publish_dir: ./site
           cname: popmonster.vip
